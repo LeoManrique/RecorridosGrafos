@@ -16,7 +16,7 @@ public class Nodo<E> {
     public void setDato(E dato) {
         this.dato = dato;
     }
-
+    //vamo a cholear Xd
     public boolean isVisitado() {
         return visitado;
     }
