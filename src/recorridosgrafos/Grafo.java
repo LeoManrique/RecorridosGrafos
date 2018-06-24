@@ -24,46 +24,34 @@ public class Grafo<E> {
         matriz[pos1][pos2] = 0;
     }
     
-    public void recorridoAnchura(E nodo_I){
+    public void recorridoAnchura(Integer nodo_I){
         
-        Nodo<E> rA = new Nodo(nodo_I);        
-        Cola colaNR = new Cola();
-        colaNR.encolar(nodo_I);
+        int cantidad = elementos.length,r;
+        ArrayList<E> salida = new ArrayList<>();
+        Nodo<E> nodo = elementos[nodo_I];
+        Cola<Integer> recorrido = new Cola();        
+        recorrido.encolar(nodo_I);
+        salida.add(nodo.getDato());
         
-        while (!colaNR.esVacio()) {
-            int r = (int)colaNR.primero();            
-            for (int i = 0; i < elementos.length; i++) {                
-                if (matriz[r][i]==1 && !rA.isVisitado()) {
-                    colaNR.encolar(i);
-                    rA.setDato(rA.getDato());
-                    rA.setVisitado(true);
+        while (!recorrido.esVacio()) {
+            r = recorrido.primero();            
+            for (int i = 0; i < cantidad; i++) {                
+                if (matriz[nodo_I][i] == 1 && !elementos[i].isVisitado()) {
+                    nodo_I = i;
+                    nodo = elementos[i];
+                    nodo.setVisitado(true);
+                    recorrido.encolar(i);
+                    salida.add(nodo.getDato());
+                    break;
                 }
             }
-            colaNR.desencolar();            
+            recorrido.desencolar();                        
+            /*if (ultimo){
+                recorrido.desapilar();
+                nodoI = recorrido.tope();
+            }*/
         }
-        for (int i = 0; i < elementos.length; i++) {
-            System.out.print( elementos[i].getDato()+" ");
-        }
-        
-    /*ArrayList<Integer> recorridoA = new ArrayList<Integer>();
-        Nodo_recorrido[nodoI] = true;
-        
-        ArrayList<Integer> registro_recorridos = new ArrayList<Integer>();
-        recorridoA.add(nodoI);
-        registro_recorridos.add(nodoI);
-        Cola colaA = new Cola();
-        while (!registro_recorridos.isEmpty()) {
-            int x = registro_recorridos.remove(0); 
-            for (int i = 0; i < g_ma.length; i++) {
-                if (g_ma[x][i] == 1 && !Nodo_recorrido[i]) {
-                    registro_recorridos.add(i);
-                    recorridoA.add(i);
-                    Nodo_recorrido[i] = true;
-                }                   
-            }
-        }
-        return recorridoA; 
-    */
+        System.out.println("Grafo recorrido en anchura: "+salida);
     }
     public void recorridoProfundidad(Integer nodoI){
         int cantidad = elementos.length;
