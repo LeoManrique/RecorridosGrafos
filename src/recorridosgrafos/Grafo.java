@@ -24,9 +24,12 @@ public class Grafo<E> {
     
     public void recorridoAnchura(int nodo_I){
         
+        //Cola de nodos recorridos
         Cola colaNR = new Cola();
         colaNR.encolar(nodo_I);
-        
+        while (!colaNR.esVacio()) {
+            
+        }
     /*ArrayList<Integer> recorridoA = new ArrayList<Integer>();
         Nodo_recorrido[nodoI] = true;
         
