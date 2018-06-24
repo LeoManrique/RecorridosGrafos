@@ -45,7 +45,7 @@ public class Grafo<E> {
                     break;
                 }
             }
-            recorrido.desencolar();                        
+            recorrido.desencolar();
             /*if (ultimo){
                 recorrido.desapilar();
                 nodoI = recorrido.tope();
