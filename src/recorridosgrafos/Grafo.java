@@ -1,5 +1,7 @@
 package recorridosgrafos;
 
+import java.util.ArrayList;
+
 public class Grafo<E> {
     Nodo<E>[] elementos;
     int[][] matriz;
@@ -50,8 +52,34 @@ public class Grafo<E> {
         return recorridoA; 
     */
     }
-    public void recorridoProfundidad(int nodo_I){
-        Pila pila = new Pila();
+    public void recorridoProfundidad(Integer nodoI){
+        int cantidad = elementos.length;
+        ArrayList<E> output = new ArrayList<>();
+        Nodo<E> nodo = elementos[nodoI];
+        nodo.setVisitado(true);
+        Pila<Integer> recorrido = new Pila();
+        recorrido.apilar(nodoI);
+        output.add(nodo.getDato());
+        
+        while(!recorrido.esVacio()){
+            boolean ultimo = true;
+            for (int i = 0; i < cantidad; i++){
+                if (matriz[nodoI][i] == 1 && !elementos[i].isVisitado()){
+                    nodoI = i;
+                    nodo = elementos[i];
+                    nodo.setVisitado(true);
+                    recorrido.apilar(nodoI);
+                    output.add(nodo.getDato());
+                    ultimo = false;
+                    break;
+                }
+            }
+            if (ultimo){
+                recorrido.desapilar();
+                nodoI = recorrido.tope();
+            }
+        }
+        System.out.println("Grafo recorrido en profundidad: "+output);
     }
     
     public String toStringElementos(){

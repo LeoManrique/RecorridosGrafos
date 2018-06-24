@@ -2,11 +2,11 @@ package recorridosgrafos;
 
 import java.util.ArrayList;
 
-public class Pila extends ArrayList{
+public class Pila<E> extends ArrayList<E>{
     
     public Pila(){}
     
-    public void apilar(Object dato){
+    public void apilar(E dato){
         this.add(dato);
     }
     
@@ -16,8 +16,8 @@ public class Pila extends ArrayList{
         }
     }
     
-    public Object tope(){
-        Object aux = null;
+    public E tope(){
+        E aux = null;
         if(this.size()>0){
             aux = this.get(this.size()-1);
         }
@@ -31,7 +31,7 @@ public class Pila extends ArrayList{
     public Integer getTamano(){
         return this.size();
     }
-    public boolean buscar(Object dato){
+    public boolean buscar(E dato){
         boolean encontrado = false;
         int i=0;
         while(i<this.size() && !encontrado){

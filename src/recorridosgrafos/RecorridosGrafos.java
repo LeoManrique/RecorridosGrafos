@@ -10,10 +10,13 @@ public class RecorridosGrafos {
         
         Grafo grafo = new Grafo(lista);
         
+        grafo.añadirVertice(0, 1);
+        grafo.añadirVertice(0, 2);
+        grafo.añadirVertice(2, 1);
+        grafo.añadirVertice(1, 0);
+        
         System.out.println(grafo.toString());
         
-        grafo.añadirVertice(0, 2);
-        
-        System.out.println(grafo.toStringMatriz());
+        grafo.recorridoProfundidad(0);
     }
 }
