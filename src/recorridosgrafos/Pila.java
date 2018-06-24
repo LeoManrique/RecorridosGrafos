@@ -24,14 +24,14 @@ public class Pila extends ArrayList{
         return aux;
     }
     
-    public boolean EsVacio(){
+    public boolean esVacio(){
         return this.isEmpty();
     }
     
-    public Integer Tamano(){
+    public Integer getTamano(){
         return this.size();
     }
-    public boolean Buscar(Object dato){
+    public boolean buscar(Object dato){
         boolean encontrado = false;
         int i=0;
         while(i<this.size() && !encontrado){
