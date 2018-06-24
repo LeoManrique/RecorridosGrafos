@@ -44,7 +44,7 @@ public class RecorridosGrafos {
         
         System.out.println(grafo.toString());
         
-        grafo.recorridoProfundidad(0);
+        //grafo.recorridoProfundidad(0);
         
         grafo.recorridoAnchura(0);
 
