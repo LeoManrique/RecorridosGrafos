@@ -1,8 +1,8 @@
 package recorridosgrafos;
 
 public class Nodo<E> {
-    E dato;
-    boolean visitado;
+    private E dato;
+    private boolean visitado;
 
     public Nodo(E dato) {
         this.dato = dato;

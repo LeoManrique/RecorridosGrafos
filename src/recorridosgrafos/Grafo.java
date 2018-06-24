@@ -21,21 +21,14 @@ public class Grafo<E> {
     public void eliminarVertice(int pos1, int pos2){
         matriz[pos1][pos2] = 0;
     }
-    
-    public Nodo<E>[] getElementos() {
-        return elementos;
-    }
-
-    public int[][] getMatriz() {
-        return matriz;
-    }
-    
+      
     public String toStringElementos(){
         int cantidad = elementos.length;
         String res = "Listado de Elementos: \n";
         for (int i = 0; i < cantidad; i++) {
             res+= "Elemento "+i+": "+elementos[i].getDato()+"\n";
         }
+        res+="\n";
         return res;
     }
     public String toStringMatriz(){
@@ -57,6 +50,7 @@ public class Grafo<E> {
         for (int i = 0; i < cantidad; i++) {
             res+= "Elemento "+i+": "+elementos[i].getDato()+"\n";
         }
+        res+="\n";
         res+= "Matriz de adyacencia: \n";
         for (int i = 0; i < cantidad; i++) {
             for (int j = 0; j < cantidad; j++) {
