@@ -17,25 +17,11 @@ public class RecorridosGrafos {
         lista[10] = new Nodo("K");
                 
         Grafo grafo = new Grafo(lista);
-<<<<<<< HEAD
 
-=======
-        
-        System.out.println(grafo.toStringElementos());
-
-        grafo.añadirVertice(0, 1);
-        grafo.añadirVertice(0, 2);
-        grafo.añadirVertice(2, 1);
-        grafo.añadirVertice(1, 0);
-        
         System.out.println(grafo.toString());
         
         grafo.recorridoProfundidad(0);
-
-        //System.out.println(grafo.toStringElementos());
-
         
->>>>>>> b66c6ebb7e3f37db28bfab57a3fbb751b88ee6b5
         grafo.añadirVertice(0, 1);
         grafo.añadirVertice(1, 0);
         grafo.añadirVertice(1, 4);
@@ -61,11 +47,7 @@ public class RecorridosGrafos {
         
         grafo.recorridoProfundidad(0);
         
-<<<<<<< HEAD
-        //grafo.recorridoAnchura(0);
-=======
         grafo.recorridoAnchura(0);
 
->>>>>>> b66c6ebb7e3f37db28bfab57a3fbb751b88ee6b5
     }
 }
