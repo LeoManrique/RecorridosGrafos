@@ -1,4 +1,4 @@
-package ejercicio_p2_pila;
+package recorridosgrafos;
 
 import java.util.ArrayList;
 

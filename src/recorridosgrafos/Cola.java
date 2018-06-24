@@ -1,4 +1,4 @@
-package ejercicio_3_cola;
+package recorridosgrafos;
 
 import java.util.ArrayList;
 

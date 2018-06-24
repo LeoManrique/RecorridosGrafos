@@ -42,7 +42,7 @@ public class Grafo<E> {
         }
         return res;
     }
-    
+        
     @Override
     public String toString(){
         int cantidad = elementos.length;
