@@ -30,6 +30,26 @@ public class Grafo<E> {
         return matriz;
     }
     
+    public String toStringElementos(){
+        int cantidad = elementos.length;
+        String res = "Listado de Elementos: \n";
+        for (int i = 0; i < cantidad; i++) {
+            res+= "Elemento "+i+": "+elementos[i].getDato()+"\n";
+        }
+        return res;
+    }
+    public String toStringMatriz(){
+        int cantidad = elementos.length;
+        String res= "Matriz de adyacencia: \n";
+        for (int i = 0; i < cantidad; i++) {
+            for (int j = 0; j < cantidad; j++) {
+                res+= matriz[i][j]+"  ";
+            }
+            res+="\n";
+        }
+        return res;
+    }
+    
     @Override
     public String toString(){
         int cantidad = elementos.length;
