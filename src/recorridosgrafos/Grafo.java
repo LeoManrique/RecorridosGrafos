@@ -26,12 +26,23 @@ public class Grafo<E> {
     
     public void recorridoAnchura(int nodo_I){
         
-        //Cola de nodos recorridos
+        //Cola de nodos recorridos        
+        Nodo<E> aux = new Nodo(nodo_I);
+        
         Cola colaNR = new Cola();
         colaNR.encolar(nodo_I);
         while (!colaNR.esVacio()) {
-            
+            int r = (int)colaNR.primero();            
+            for (int i = 0; i < elementos.length; i++) {                
+                if (matriz[r][i]==1 && !aux.isVisitado()) {
+                    colaNR.encolar(i);
+                    aux = new Nodo(i);
+                    aux.setVisitado(true);
+                }
+            }
+            colaNR.desencolar();            
         }
+        System.out.println(aux);
     /*ArrayList<Integer> recorridoA = new ArrayList<Integer>();
         Nodo_recorrido[nodoI] = true;
         
