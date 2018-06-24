@@ -50,8 +50,8 @@ public class Grafo<E> {
         return recorridoA; 
     */
     }
-    public void recorridoProfundidad(){
-        
+    public void recorridoProfundidad(int nodo_I){
+        Pila pila = new Pila();
     }
     
     public String toStringElementos(){
