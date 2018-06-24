@@ -22,8 +22,30 @@ public class Grafo<E> {
         matriz[pos1][pos2] = 0;
     }
     
-    public void recorridoAnchura(){
+    public void recorridoAnchura(int nodo_I){
         
+        Cola colaNR = new Cola();
+        colaNR.encolar(nodo_I);
+        
+    /*ArrayList<Integer> recorridoA = new ArrayList<Integer>();
+        Nodo_recorrido[nodoI] = true;
+        
+        ArrayList<Integer> registro_recorridos = new ArrayList<Integer>();
+        recorridoA.add(nodoI);
+        registro_recorridos.add(nodoI);
+        Cola colaA = new Cola();
+        while (!registro_recorridos.isEmpty()) {
+            int x = registro_recorridos.remove(0); 
+            for (int i = 0; i < g_ma.length; i++) {
+                if (g_ma[x][i] == 1 && !Nodo_recorrido[i]) {
+                    registro_recorridos.add(i);
+                    recorridoA.add(i);
+                    Nodo_recorrido[i] = true;
+                }                   
+            }
+        }
+        return recorridoA; 
+    */
     }
     public void recorridoProfundidad(){
         
