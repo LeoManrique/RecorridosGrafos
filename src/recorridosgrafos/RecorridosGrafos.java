@@ -18,7 +18,7 @@ public class RecorridosGrafos {
                 
         Grafo grafo = new Grafo(lista);
         
-        //System.out.println(grafo.toStringElementos());
+        System.out.println(grafo.toStringElementos());
         
         grafo.añadirVertice(0, 1);
         grafo.añadirVertice(1, 0);

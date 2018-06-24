@@ -22,25 +22,27 @@ public class Grafo<E> {
         matriz[pos1][pos2] = 0;
     }
     
-    public void recorridoAnchura(int nodo_I){
+    public void recorridoAnchura(E nodo_I){
         
-        //Cola de nodos recorridos        
-        Nodo<E> aux = new Nodo(nodo_I);
-        
+        Nodo<E> rA = new Nodo(nodo_I);        
         Cola colaNR = new Cola();
         colaNR.encolar(nodo_I);
+        
         while (!colaNR.esVacio()) {
             int r = (int)colaNR.primero();            
             for (int i = 0; i < elementos.length; i++) {                
-                if (matriz[r][i]==1 && !aux.isVisitado()) {
+                if (matriz[r][i]==1 && !rA.isVisitado()) {
                     colaNR.encolar(i);
-                    aux = new Nodo(i);
-                    aux.setVisitado(true);
+                    rA.setDato(rA.getDato());
+                    rA.setVisitado(true);
                 }
             }
             colaNR.desencolar();            
         }
-        System.out.println(aux);
+        for (int i = 0; i < elementos.length; i++) {
+            System.out.print( elementos[i].getDato()+" ");
+        }
+        
     /*ArrayList<Integer> recorridoA = new ArrayList<Integer>();
         Nodo_recorrido[nodoI] = true;
         
