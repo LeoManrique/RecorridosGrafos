@@ -44,9 +44,10 @@ public class RecorridosGrafos {
         grafo.añadirVertice(3, 7);
         
         System.out.println(grafo.toString());
+       
+        grafo.recorridoAnchura(0);
+        //grafo.recorridoProfundidad(0);
         
-        grafo.recorridoProfundidad(0);
-        //grafo.recorridoAnchura(0);
 
     }
 }

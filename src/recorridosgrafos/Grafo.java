@@ -27,26 +27,26 @@ public class Grafo<E> {
     public void recorridoAnchura(Integer nodo_I){
         
         int cantidad = elementos.length,r;
-        ArrayList<E> salida = new ArrayList<>();
+        ArrayList<E> recorridoA = new ArrayList<>();
         Nodo<E> nodo = elementos[nodo_I];
         nodo.setVisitado(true);
-        Cola<Integer> recorrido = new Cola();        
-        recorrido.encolar(nodo_I);
-        salida.add(nodo.getDato());
+        Cola<Integer> NodosAdyacentes = new Cola();        
+        NodosAdyacentes.encolar(nodo_I);
+        recorridoA.add(nodo.getDato());
         
-        while (!recorrido.esVacio()) {
-            r = recorrido.primero();            
+        while (!NodosAdyacentes.esVacio()) {
+            r = NodosAdyacentes.primero();            
             for (int i = 0; i < cantidad; i++) {                
                 if (matriz[r][i] == 1 && !elementos[i].isVisitado()) {
                     nodo = elementos[i];
                     nodo.setVisitado(true);
-                    recorrido.encolar(i);
-                    salida.add(nodo.getDato());
+                    NodosAdyacentes.encolar(i);
+                    recorridoA.add(nodo.getDato());
                 }
             }
-            recorrido.desencolar(); 
+            NodosAdyacentes.desencolar(); 
         }
-        System.out.println("Grafo recorrido en anchura: "+salida);
+        System.out.println("Grafo recorrido en anchura: " + recorridoA);
     }
     public void recorridoProfundidad(Integer nodoI){
         int cantidad = elementos.length;
