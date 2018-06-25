@@ -38,7 +38,6 @@ public class Grafo<E> {
             r = recorrido.primero();            
             for (int i = 0; i < cantidad; i++) {                
                 if (matriz[r][i] == 1 && !elementos[i].isVisitado()) {
-                    //nodo_I = i;
                     nodo = elementos[i];
                     nodo.setVisitado(true);
                     recorrido.encolar(i);
