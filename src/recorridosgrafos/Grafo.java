@@ -29,6 +29,7 @@ public class Grafo<E> {
         int cantidad = elementos.length,r;
         ArrayList<E> salida = new ArrayList<>();
         Nodo<E> nodo = elementos[nodo_I];
+        nodo.setVisitado(true);
         Cola<Integer> recorrido = new Cola();        
         recorrido.encolar(nodo_I);
         salida.add(nodo.getDato());
@@ -36,20 +37,15 @@ public class Grafo<E> {
         while (!recorrido.esVacio()) {
             r = recorrido.primero();            
             for (int i = 0; i < cantidad; i++) {                
-                if (matriz[nodo_I][i] == 1 && !elementos[i].isVisitado()) {
-                    nodo_I = i;
+                if (matriz[r][i] == 1 && !elementos[i].isVisitado()) {
+                    //nodo_I = i;
                     nodo = elementos[i];
                     nodo.setVisitado(true);
                     recorrido.encolar(i);
                     salida.add(nodo.getDato());
-                    break;
                 }
             }
-            recorrido.desencolar();                        
-            /*if (ultimo){
-                recorrido.desapilar();
-                nodoI = recorrido.tope();
-            }*/
+            recorrido.desencolar(); 
         }
         System.out.println("Grafo recorrido en anchura: "+salida);
     }
@@ -103,7 +99,7 @@ public class Grafo<E> {
         }
         return res;
     }
-        
+    
     @Override
     public String toString(){
         String res = toStringElementos()+toStringMatriz();

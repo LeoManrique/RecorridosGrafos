@@ -18,19 +18,20 @@ public class RecorridosGrafos {
                 
         Grafo grafo = new Grafo(lista);
 
-        System.out.println(grafo.toString());
-
+        //System.out.println(grafo.toString());
         
         grafo.añadirVertice(0, 1);
         grafo.añadirVertice(1, 0);
+        grafo.añadirVertice(0, 2);
+        grafo.añadirVertice(2, 0);
+        grafo.añadirVertice(0, 3);
+        grafo.añadirVertice(3, 0);
         grafo.añadirVertice(1, 4);
         grafo.añadirVertice(4, 1);
         grafo.añadirVertice(4, 8);
         grafo.añadirVertice(8, 4);
         grafo.añadirVertice(8, 5);
-        grafo.añadirVertice(5, 8);
-        grafo.añadirVertice(0, 2);
-        grafo.añadirVertice(2, 0);
+        grafo.añadirVertice(5, 8);        
         grafo.añadirVertice(2, 6);
         grafo.añadirVertice(6, 2);
         grafo.añadirVertice(6, 9);
@@ -44,8 +45,8 @@ public class RecorridosGrafos {
         
         System.out.println(grafo.toString());
         
-        //grafo.recorridoProfundidad(0);
-        
+        grafo.recorridoProfundidad(0);
+        grafo.reiniciar();
         grafo.recorridoAnchura(0);
 
     }
